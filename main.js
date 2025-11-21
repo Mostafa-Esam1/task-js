@@ -4,7 +4,7 @@ let prices = [400, 500, 600];
 function ShowPhones() {
   console.clear();
   phones.forEach((phone, index) => {
-    console.log(`phone is : ${phone} => price is : ${prices[index]}`);
+    console.log(` ${index+1}. phone is : ${phone} => price is : ${prices[index]}`);
   });
 }
 
@@ -25,11 +25,11 @@ function DeletPhone() {
 
 function UpDate() {
   let Index = +prompt("Enter the index");
-  let NewName = prompt('Enter UpDate for name') ;
-  let NewPrice =+prompt("inter UpDate for Price") ;
-  phones.splice(Index, 1);
-  prices.splice(Index, 1);
-  phones.push(NewName);
-  prices.push(NewPrice);
+  let NewName = prompt("Enter UpDate for name");
+  let NewPrice = +prompt("inter UpDate for Price");
+  phones.splice(Index -1, 1, NewName);
+  prices.splice(Index -1, 1, NewPrice);
+  //   phones.push(NewName);
+  //   prices.push(NewPrice);
   ShowPhones();
 }
